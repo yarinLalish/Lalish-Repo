@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: kubernetes-bootcamp
   labels:
-    app: spring-music
-  name: spring-deployment
+    app: kubernetes-bootcamp
 spec:
+  replicas: 6
   selector:
     matchLabels:
-      app: spring-music
-  replicas: 2
+      app: kubernetes-bootcamp
   template:
     metadata:
       labels:
-        app: spring-music
+        app: kubernetes-bootcamp
     spec:
       containers:
-      - name: spring-music
-        image: yanivomc/spring-music:latest
+      - name: kubernetes-bootcamp
+        image: jocatalin/kubernetes-bootcamp:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
